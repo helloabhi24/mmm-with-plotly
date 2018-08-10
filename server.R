@@ -1,0 +1,9 @@
+library(plotly)
+library(shiny)
+shinyServer(function(input,output){
+  output$plot1<-renderPlotly(plot_ly(data11,x=~Year,y=~max1,type='bar',name='max'
+  )%>%add_trace(y=~min1,name="min"
+  )%>%add_trace(y=~mean1,name="mean"
+  )%>%add_trace(y=~median1,name='Median'
+  )%>%layout(yaxis=list(title='Count'),barmode='group'))
+})
