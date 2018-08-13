@@ -31,6 +31,7 @@ ggg<-aggregate(OS_INT~Year,IInd,FUN = min )
 gggg<-aggregate(OS_INT~Year,IInd,FUN = mean )
 gggg
 library(plotly)
+library(ggplot2)
 Year<-g$Year
 ggf<-IInd$Year
 length(ggf) 
