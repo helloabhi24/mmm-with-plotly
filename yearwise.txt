@@ -1,0 +1,25 @@
+sub1<-subset(IInd,Year=='2013')
+head(sub1)
+(asa[,1])
+asa<-sub1[,c(5:21,23)]
+View(asa)
+asa1<-names(asa[,c(1:18)])
+class(as.numeric(asa[,2]))
+x1<-factor(asa1)
+a<-0
+for (i in 1:18) {
+  a[i]<-max(asa[,i])
+}
+x<-print(a)
+b<-0
+for (i in 1:18) {
+  b[i]<-min(asa[,i])
+}
+y<-print(b)
+asa1
+data3<-data.frame(x1,x,y)
+p3<-plot_ly(data3,x=~x1,y=x,type = 'bar',name='Max'
+            )%>%add_trace(y=~y,name='Min'
+                          )%>%layout(xaxis=list(title='Subject'),yaxis=list(title='value'),barmode='group')
+
+p3
